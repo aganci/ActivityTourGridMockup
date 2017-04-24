@@ -7,12 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-/**
- * Author: Sriyank Siddhartha
- * Module 3 : Adding Toolbar
- *
- *		"AFTER" demo project of : TOOLBAR as ACTIONBAR
- **/
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
@@ -25,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("Welcome !");
-        toolbar.setSubtitle("Folks !");
+        getSupportActionBar().setTitle("Langhe Tour");
+//        toolbar.setSubtitle("Folks !");
 
         // Compatibility by JAVA
 //        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
