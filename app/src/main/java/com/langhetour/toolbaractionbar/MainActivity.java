@@ -2,6 +2,9 @@ package com.langhetour.toolbaractionbar;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,15 +23,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Langhe Tour");
-//        toolbar.setSubtitle("Folks !");
+        setUpBreakfastView();
+    }
 
-        // Compatibility by JAVA
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            toolbar.setElevation(10f);
-//        }
+    private void setUpBreakfastView() {
+        RecyclerView list = (RecyclerView) findViewById(R.id.breakfast_list);
+        list.setAdapter(new BreakfastAdapter(this, Breakfast.getData()));
 
-//        toolbar.setLogo(R.drawable.good_day);
-//        toolbar.setNavigationIcon(R.drawable.navigation_back);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        list.setLayoutManager(layoutManager);
+
+        list.setItemAnimator(new DefaultItemAnimator());
     }
 
     @Override
