@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ActivityTourMockup.iml" filepath="$PROJECT_DIR$/ActivityTourMockup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ActivityTourGridMockup.iml" filepath="$PROJECT_DIR$/ActivityTourGridMockup.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

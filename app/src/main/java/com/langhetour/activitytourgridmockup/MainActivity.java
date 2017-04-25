@@ -1,9 +1,9 @@
-package com.langhetour.toolbaractionbar;
+package com.langhetour.activitytourgridmockup;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView list = (RecyclerView) findViewById(R.id.breakfast_list);
         list.setAdapter(new BreakfastAdapter(this, Breakfast.getData()));
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        layoutManager.setOrientation(GridLayoutManager.VERTICAL);
         list.setLayoutManager(layoutManager);
 
         list.setItemAnimator(new DefaultItemAnimator());

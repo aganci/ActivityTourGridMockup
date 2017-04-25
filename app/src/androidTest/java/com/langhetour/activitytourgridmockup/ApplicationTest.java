@@ -1,4 +1,4 @@
-package com.langhetour.toolbaractionbar;
+package com.langhetour.activitytourgridmockup;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
