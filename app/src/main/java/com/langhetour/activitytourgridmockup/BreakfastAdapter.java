@@ -9,10 +9,10 @@ import android.view.ViewGroup;
 import java.util.List;
 
 class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.BreakfastViewHolder> {
-    private final List<Breakfast> breakfasts;
+    private final List<ListItem> breakfasts;
     private final LayoutInflater inflater;
 
-    public BreakfastAdapter(Context context, List<Breakfast> data)
+    public BreakfastAdapter(Context context, List<ListItem> data)
     {
         inflater = LayoutInflater.from(context);
         this.breakfasts = data;
@@ -20,8 +20,18 @@ class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.BreakfastVi
 
     @Override
     public BreakfastViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.breakfast_item, parent, false);
-        return new BreakfastViewHolder(view);
+        View view;
+
+        switch(viewType) {
+            case ListItem.PLACE:
+                view = inflater.inflate(R.layout.breakfast_item, parent, false);
+                return new BreakfastViewHolder(view);
+            case ListItem.CATEGORY:
+                view = inflater.inflate(R.layout.breakfast_title, parent, false);
+                return new BreakfastViewHolder(view);
+            default:
+                throw new IllegalArgumentException("Invalid viewType" + viewType);
+        }
     }
 
     @Override
@@ -34,13 +44,18 @@ class BreakfastAdapter extends RecyclerView.Adapter<BreakfastAdapter.BreakfastVi
         return this.breakfasts.size();
     }
 
+    @Override
+    public int getItemViewType(int position) {
+        return this.breakfasts.get(position).getItemType();
+    }
+
     class BreakfastViewHolder extends RecyclerView.ViewHolder {
         public BreakfastViewHolder(View itemView) {
             super(itemView);
         }
 
-        public void bindTo(Breakfast breakfast) {
-
+        public void bindTo(ListItem item) {
+            item.bindTo(itemView);
         }
     }
 }
