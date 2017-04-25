@@ -18,6 +18,9 @@ public class ListItem {
         result.add(new Breakfast("Castello Prunetto", R.drawable.castello_prunetto));
         result.add(new Breakfast("Castello Saliceto", R.drawable.castello_saliceto));
         result.add(new Breakfast("Piazza Molinari", R.drawable.piazza_molinari_cortemilia));
+        result.add(new CategoryItem("Mangiare"));
+        result.add(new Breakfast("Langhet", R.drawable.langhet));
+        result.add(new Breakfast("Pizzeria La Torre", R.drawable.pizzeria_la_torre_cortemilia));
         return result;
     }
 
